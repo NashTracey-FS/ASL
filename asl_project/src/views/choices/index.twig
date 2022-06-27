@@ -1,0 +1,15 @@
+{% extends 'layouts/_default.twig' %}
+{% block title %}Show a list of Choices{% endblock %}
+
+{% block main_content %}
+	<h1>List of all Choices</h1>
+	<ul>
+		{% for c in choices %}
+		<li>
+			<a href="/choices/{{ c.id }}">{{ c.name }}</a> - 
+			<a href="/quizzes/{{ c.id }}/edit">Edit</a> | <a href="/choices/{{ c.id }}/delete">Delete</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<a href="/quizzes/new">Create a new Choice</a>
+{% endblock %}

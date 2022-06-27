@@ -1,0 +1,14 @@
+{% extends 'layouts/_default.twig' %}
+{% block title %}Create a new Question{% endblock %}
+
+{% block main_content %}
+	<h1>Create new Question</h1>
+	{% if errors %}
+		<ul>
+			{% for e in errors %}
+			<li>{{ e }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{% include 'questions/_form.twig' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layouts/_default.twig' %}
+{% block title %}Show a list of Questions{% endblock %}
+
+{% block main_content %}
+	<h1>List of all Questions</h1>
+	<ul>
+		{% for q in questions %}
+		<li>
+			<a href="/questions/{{ q.id }}">{{ q.name }}</a> - 
+			<a href="/questions/{{ q.id }}/edit">Edit</a> | <a href="/questions/{{ q.id }}/delete">Delete</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<a href="/questions/new">Create a new Question</a>
+{% endblock %}
